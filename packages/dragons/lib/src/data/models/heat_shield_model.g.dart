@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'heatshield_model.dart';
+part of 'heat_shield_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

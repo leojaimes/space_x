@@ -1,18 +1,48 @@
-import '../../domain/domain.dart';
 
-import '../datasources/local_data_source.dart';
-import '../datasources/remote_data_source.dart';
+
+// ignore: import_of_legacy_library_into_null_safe
+import 'package:errors/errors.dart';
+// ignore: import_of_legacy_library_into_null_safe
+import 'package:dartz/dartz.dart';
+ 
+import 'package:network_manager/network_manager.dart';
+
+import '../../domain/domain.dart' show Dragon, IDragonsRepository;
+import '../datasources/remote/iremote_data_source.dart';
+
 
 /// Dragons repository implementation
 class DragonsRepository implements IDragonsRepository {
   /// Dragons repository constructor
   DragonsRepository({
-    required this.localDataSource,
-    required this.remoteDataSource,
-  });
+    required networkManager,
+    required remoteDataSource,
+  })  : assert(networkManager != null),
+        assert(remoteDataSource != null),
+        _networkManager = networkManager,
+        _remoteDataSource = remoteDataSource;
 
-  final LocalDataSource localDataSource;
-  final RemoteDataSource remoteDataSource;
+  final INetworkManager _networkManager;
+  final IRemoteDataSource _remoteDataSource;
 
-  // TODO: Implement [IDragonsRepository] methods
+  @override
+  Future<Either<Failure, List<Dragon>>> getAllDragons() async {
+    if (await _networkManager.isConnected) {
+      final dragons = await _remoteDataSource.getAllDragons();
+      return Right(dragons);
+    } else {
+      return Left(ServerFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, Dragon>> getDragon(String dragonId) async {
+    if (await _networkManager.isConnected) {
+      final dragon = await _remoteDataSource.getDragon(dragonId);
+      
+      return Right(dragon);
+    }else{
+       return Left(ServerFailure());
+    }
+  }
 }

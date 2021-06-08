@@ -1,7 +1,7 @@
 import 'package:dragons/src/domain/entities/heat_shield.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'heatshield_model.g.dart';
+part 'heat_shield_model.g.dart';
 
 @JsonSerializable()
 // ignore_for_file: public_member_api_docs

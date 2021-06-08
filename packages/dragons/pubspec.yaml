@@ -14,11 +14,12 @@ dependencies:
     git:
       url: git://github.com/NoScopeDevs/network_manager
 
-  dartz:
+  dartz: ^0.9.2
   json_annotation:
   freezed_annotation:
   meta:
   path:
+  dio:
 
 dev_dependencies:
   # code generators
