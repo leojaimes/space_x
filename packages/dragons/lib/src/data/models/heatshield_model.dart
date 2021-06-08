@@ -1,4 +1,4 @@
-import 'package:dragons/src/domain/entities/heatshield.dart';
+import 'package:dragons/src/domain/entities/heat_shield.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'heatshield_model.g.dart';
