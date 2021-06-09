@@ -14,7 +14,7 @@ dependencies:
     git:
       url: git://github.com/NoScopeDevs/network_manager
 
-  dartz: ^0.9.2
+  dartz: ^0.10.0-nullsafety.2  
   json_annotation:
   freezed_annotation:
   meta:

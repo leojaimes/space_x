@@ -169,6 +169,52 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.1"
+  dartz:
+    dependency: transitive
+    description:
+      name: dartz
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.10.0-nullsafety.2"
+  data_connection_checker:
+    dependency: transitive
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "1b983aa377d9984ab18292d5ff33768e284e93d6"
+      url: "git://github.com/uSlashVlad/data_connection_checker.git"
+    source: git
+    version: "0.4.0-nullsafety"
+  dio:
+    dependency: transitive
+    description:
+      name: dio
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.0"
+  dragons:
+    dependency: "direct main"
+    description:
+      path: "packages/dragons"
+      relative: true
+    source: path
+    version: "0.0.1+1"
+  equatable:
+    dependency: transitive
+    description:
+      name: equatable
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.2"
+  errors:
+    dependency: transitive
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "89a9cb140f16284915b6f77b1bc881e3032f8809"
+      url: "git://github.com/NoScopeDevs/errors"
+    source: git
+    version: "2.0.0"
   fake_async:
     dependency: transitive
     description:
@@ -305,6 +351,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  network_manager:
+    dependency: transitive
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: e7dce05abfdd6e03e79eb4cb34a5d400faa7f153
+      url: "git://github.com/NoScopeDevs/network_manager"
+    source: git
+    version: "2.0.0"
   package_config:
     dependency: transitive
     description:

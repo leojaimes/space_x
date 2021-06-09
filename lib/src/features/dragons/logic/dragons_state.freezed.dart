@@ -16,8 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$DragonsStateTearOff {
   const _$DragonsStateTearOff();
 
-  Data call() {
-    return const Data();
+  DataDragons dataDragons({required List<Dragon> dragons}) {
+    return DataDragons(
+      dragons: dragons,
+    );
   }
 
   Initial initial() {
@@ -41,16 +43,16 @@ const $DragonsState = _$DragonsStateTearOff();
 /// @nodoc
 mixin _$DragonsState {
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Dragon> dragons) dataDragons,
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String? message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Dragon> dragons)? dataDragons,
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String? message)? error,
@@ -58,16 +60,16 @@ mixin _$DragonsState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(Data value) $default, {
+  TResult map<TResult extends Object?>({
+    required TResult Function(DataDragons value) dataDragons,
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Error value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(Data value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DataDragons value)? dataDragons,
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Error value)? error,
@@ -93,94 +95,126 @@ class _$DragonsStateCopyWithImpl<$Res> implements $DragonsStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $DataCopyWith<$Res> {
-  factory $DataCopyWith(Data value, $Res Function(Data) then) =
-      _$DataCopyWithImpl<$Res>;
+abstract class $DataDragonsCopyWith<$Res> {
+  factory $DataDragonsCopyWith(
+          DataDragons value, $Res Function(DataDragons) then) =
+      _$DataDragonsCopyWithImpl<$Res>;
+  $Res call({List<Dragon> dragons});
 }
 
 /// @nodoc
-class _$DataCopyWithImpl<$Res> extends _$DragonsStateCopyWithImpl<$Res>
-    implements $DataCopyWith<$Res> {
-  _$DataCopyWithImpl(Data _value, $Res Function(Data) _then)
-      : super(_value, (v) => _then(v as Data));
+class _$DataDragonsCopyWithImpl<$Res> extends _$DragonsStateCopyWithImpl<$Res>
+    implements $DataDragonsCopyWith<$Res> {
+  _$DataDragonsCopyWithImpl(
+      DataDragons _value, $Res Function(DataDragons) _then)
+      : super(_value, (v) => _then(v as DataDragons));
 
   @override
-  Data get _value => super._value as Data;
+  DataDragons get _value => super._value as DataDragons;
+
+  @override
+  $Res call({
+    Object? dragons = freezed,
+  }) {
+    return _then(DataDragons(
+      dragons: dragons == freezed
+          ? _value.dragons
+          : dragons // ignore: cast_nullable_to_non_nullable
+              as List<Dragon>,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$Data implements Data {
-  const _$Data();
+class _$DataDragons implements DataDragons {
+  const _$DataDragons({required this.dragons});
+
+  @override
+  final List<Dragon> dragons;
 
   @override
   String toString() {
-    return 'DragonsState()';
+    return 'DragonsState.dataDragons(dragons: $dragons)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Data);
+    return identical(this, other) ||
+        (other is DataDragons &&
+            (identical(other.dragons, dragons) ||
+                const DeepCollectionEquality().equals(other.dragons, dragons)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(dragons);
+
+  @JsonKey(ignore: true)
+  @override
+  $DataDragonsCopyWith<DataDragons> get copyWith =>
+      _$DataDragonsCopyWithImpl<DataDragons>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Dragon> dragons) dataDragons,
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String? message) error,
   }) {
-    return $default();
+    return dataDragons(dragons);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Dragon> dragons)? dataDragons,
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String? message)? error,
     required TResult orElse(),
   }) {
-    if ($default != null) {
-      return $default();
+    if (dataDragons != null) {
+      return dataDragons(dragons);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(Data value) $default, {
+  TResult map<TResult extends Object?>({
+    required TResult Function(DataDragons value) dataDragons,
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Error value) error,
   }) {
-    return $default(this);
+    return dataDragons(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(Data value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DataDragons value)? dataDragons,
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
-    if ($default != null) {
-      return $default(this);
+    if (dataDragons != null) {
+      return dataDragons(this);
     }
     return orElse();
   }
 }
 
-abstract class Data implements DragonsState {
-  const factory Data() = _$Data;
+abstract class DataDragons implements DragonsState {
+  const factory DataDragons({required List<Dragon> dragons}) = _$DataDragons;
+
+  List<Dragon> get dragons => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $DataDragonsCopyWith<DataDragons> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -219,8 +253,8 @@ class _$Initial implements Initial {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Dragon> dragons) dataDragons,
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String? message) error,
@@ -230,8 +264,8 @@ class _$Initial implements Initial {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Dragon> dragons)? dataDragons,
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String? message)? error,
@@ -245,8 +279,8 @@ class _$Initial implements Initial {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(Data value) $default, {
+  TResult map<TResult extends Object?>({
+    required TResult Function(DataDragons value) dataDragons,
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Error value) error,
@@ -256,8 +290,8 @@ class _$Initial implements Initial {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(Data value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DataDragons value)? dataDragons,
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Error value)? error,
@@ -310,8 +344,8 @@ class _$Loading implements Loading {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Dragon> dragons) dataDragons,
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String? message) error,
@@ -321,8 +355,8 @@ class _$Loading implements Loading {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Dragon> dragons)? dataDragons,
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String? message)? error,
@@ -336,8 +370,8 @@ class _$Loading implements Loading {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(Data value) $default, {
+  TResult map<TResult extends Object?>({
+    required TResult Function(DataDragons value) dataDragons,
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Error value) error,
@@ -347,8 +381,8 @@ class _$Loading implements Loading {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(Data value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DataDragons value)? dataDragons,
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Error value)? error,
@@ -426,8 +460,8 @@ class _$Error implements Error {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Dragon> dragons) dataDragons,
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String? message) error,
@@ -437,8 +471,8 @@ class _$Error implements Error {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Dragon> dragons)? dataDragons,
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String? message)? error,
@@ -452,8 +486,8 @@ class _$Error implements Error {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(Data value) $default, {
+  TResult map<TResult extends Object?>({
+    required TResult Function(DataDragons value) dataDragons,
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Error value) error,
@@ -463,8 +497,8 @@ class _$Error implements Error {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(Data value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DataDragons value)? dataDragons,
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Error value)? error,

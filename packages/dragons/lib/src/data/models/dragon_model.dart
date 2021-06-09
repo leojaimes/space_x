@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() => _$DragonModelToJson(this);
 
 
   @override
-  final String id;
+  final String  id;
   @override
   final String name;
   @override

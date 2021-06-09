@@ -17,24 +17,24 @@ class DioRemoteDataSource implements IRemoteDataSource {
 
   @override
   Future<List<DragonModel>> getAllDragons() async {
+    final dragons = <DragonModel>[];
     try {
       final response = await _dio.get(_url);
+      print(response);
       switch (response.statusCode) {
         case 200:
-          final dragons = <DragonModel>[];
-
           for (final item in response.data) {
             dragons.add(DragonModel.fromJson(item));
           }
-
-          return dragons;
-
+          break;
         default:
           throw ServerException();
       }
     } catch (error) {
+      print(error);
       throw ServerException();
     }
+    return dragons;
   }
 
   @override
