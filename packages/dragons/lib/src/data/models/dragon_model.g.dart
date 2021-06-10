@@ -12,35 +12,39 @@ DragonModel _$DragonModelFromJson(Map<String, dynamic> json) {
     name: json['name'] as String,
     type: json['type'] as String,
     active: json['active'] as bool,
-    crewCapacity: json['crewCapacity'] as int,
-    sidewallAngleDeg: json['sidewallAngleDeg'] as int,
-    orbitDurationYr: json['orbitDurationYr'] as int,
-    dryMassKg: json['dryMassKg'] as int,
-    dryMassLb: json['dryMassLb'] as int,
-    firstFlight: DateTime.parse(json['firstFlight'] as String),
+    crewCapacity: json['crew_capacity'] as int?,
+    sidewallAngleDeg: json['sidewall_angle_deg'] as int?,
+    orbitDurationYr: json['orbit_duration_yr'] as int?,
+    dryMassKg: json['dry_mass_kg'] as int?,
+    dryMassLb: json['dry_mass_lb'] as int?,
+    firstFlight: json['firstFlight'] == null
+        ? null
+        : DateTime.parse(json['firstFlight'] as String),
     heatShield:
-        HeatShieldModel.fromJson(json['heatShield'] as Map<String, dynamic>),
-    thrusters: (json['thrusters'] as List<dynamic>)
-        .map((e) => ThrusterModel.fromJson(e as Map<String, dynamic>))
+        HeatShieldModel.fromJson(json['heat_shield'] as Map<String, dynamic>),
+    thrusters: (json['thrusters'] as List<dynamic>?)
+        ?.map((e) => ThrusterModel.fromJson(e as Map<String, dynamic>))
         .toList(),
-    launchPayloadMass: PayloadMassModel.fromJson(
-        json['launchPayloadMass'] as Map<String, dynamic>),
+    launchPayloadMass: json['launch_payload_mass'] == null
+        ? null
+        : PayloadMassModel.fromJson(
+            json['launch_payload_mass'] as Map<String, dynamic>),
     launchPayloadVol: LaunchPayloadVolModel.fromJson(
-        json['launchPayloadVol'] as Map<String, dynamic>),
+        json['launch_payload_vol'] as Map<String, dynamic>),
     returnPayloadMass: PayloadMassModel.fromJson(
-        json['returnPayloadMass'] as Map<String, dynamic>),
+        json['return_payload_mass'] as Map<String, dynamic>),
     returnPayloadVol: LaunchPayloadVolModel.fromJson(
-        json['returnPayloadVol'] as Map<String, dynamic>),
+        json['return_payload_vol'] as Map<String, dynamic>),
     pressurizedCapsule: PressurizedCapsuleModel.fromJson(
-        json['pressurizedCapsule'] as Map<String, dynamic>),
+        json['pressurized_capsule'] as Map<String, dynamic>),
     trunk: TrunkModel.fromJson(json['trunk'] as Map<String, dynamic>),
     heightWTrunk:
-        DiameterModel.fromJson(json['heightWTrunk'] as Map<String, dynamic>),
+        DiameterModel.fromJson(json['height_w_trunk'] as Map<String, dynamic>),
     diameter: DiameterModel.fromJson(json['diameter'] as Map<String, dynamic>),
-    flickrImages: (json['flickrImages'] as List<dynamic>)
-        .map((e) => e as String)
+    flickrImages: (json['flickr_images'] as List<dynamic>?)
+        ?.map((e) => e as String)
         .toList(),
-    wikipedia: json['wikipedia'] as String,
+    wikipedia: json['wikipedia'] as String?,
     description: json['description'] as String,
   );
 }
@@ -51,23 +55,23 @@ Map<String, dynamic> _$DragonModelToJson(DragonModel instance) =>
       'name': instance.name,
       'type': instance.type,
       'active': instance.active,
-      'crewCapacity': instance.crewCapacity,
+      'crew_capacity': instance.crewCapacity,
       'sidewallAngleDeg': instance.sidewallAngleDeg,
       'orbitDurationYr': instance.orbitDurationYr,
       'dryMassKg': instance.dryMassKg,
       'dryMassLb': instance.dryMassLb,
-      'firstFlight': instance.firstFlight.toIso8601String(),
+      'firstFlight': instance.firstFlight?.toIso8601String(),
       'heatShield': instance.heatShield,
       'thrusters': instance.thrusters,
-      'launchPayloadMass': instance.launchPayloadMass,
-      'launchPayloadVol': instance.launchPayloadVol,
-      'returnPayloadMass': instance.returnPayloadMass,
-      'returnPayloadVol': instance.returnPayloadVol,
-      'pressurizedCapsule': instance.pressurizedCapsule,
+      'launch_payload_mass': instance.launchPayloadMass,
+      'launch_payload_vol': instance.launchPayloadVol,
+      'return_payload_mass': instance.returnPayloadMass,
+      'return_payload_vol': instance.returnPayloadVol,
+      'pressurized_capsule': instance.pressurizedCapsule,
       'trunk': instance.trunk,
-      'heightWTrunk': instance.heightWTrunk,
+      'height_w_trunk': instance.heightWTrunk,
       'diameter': instance.diameter,
-      'flickrImages': instance.flickrImages,
+      'flickr_images': instance.flickrImages,
       'wikipedia': instance.wikipedia,
       'description': instance.description,
     };

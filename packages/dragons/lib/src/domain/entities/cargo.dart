@@ -1,14 +1,15 @@
 import 'package:equatable/equatable.dart';
 
+// ignore_for_file: public_member_api_docs
 class Cargo extends Equatable {
-  final int  solarArray;
-  final bool unpressurizedCargo;
+  const Cargo({this.solarArray = 0, this.unpressurizedCargo = false});
 
-  const Cargo({required this.solarArray, required this.unpressurizedCargo});
+  final int? solarArray;
+  final bool? unpressurizedCargo;
 
   @override
   List<Object> get props => [
-        solarArray,
-        unpressurizedCargo,
+        solarArray ?? 0,
+        unpressurizedCargo ?? false,
       ];
 }

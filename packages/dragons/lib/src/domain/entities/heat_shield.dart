@@ -4,23 +4,23 @@
 import 'package:equatable/equatable.dart';
 
 class HeatShield extends Equatable {
-  HeatShield({
-    required this.material,
-    required this.sizeMeters,
-    required this.tempDegrees,
-    required this.devPartner,
+  const HeatShield({
+      this.material='',
+      this.sizeMeters=0.0,
+      this.tempDegrees = 0,
+      this.devPartner = '',
   });
 
-  final String material;
-  final double sizeMeters;
-  final int tempDegrees;
-  final String devPartner;
+  final String? material;
+  final double? sizeMeters;
+  final int? tempDegrees;
+  final String?  devPartner;
 
   @override
   List<Object> get props => [
-        material,
-        sizeMeters,
-        tempDegrees,
-        devPartner,
+        material ?? '',
+        sizeMeters ?? 0.0 ,
+        tempDegrees ?? 0 ,
+        devPartner ?? '',
       ];
 }

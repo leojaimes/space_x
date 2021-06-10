@@ -10,12 +10,12 @@ PressurizedCapsuleModel _$PressurizedCapsuleModelFromJson(
     Map<String, dynamic> json) {
   return PressurizedCapsuleModel(
     payloadVolume: LaunchPayloadVolModel.fromJson(
-        json['payloadVolume'] as Map<String, dynamic>),
+        json['payload_volume'] as Map<String, dynamic>),
   );
 }
 
 Map<String, dynamic> _$PressurizedCapsuleModelToJson(
         PressurizedCapsuleModel instance) =>
     <String, dynamic>{
-      'payloadVolume': instance.payloadVolume,
+      'payload_volume': instance.payloadVolume,
     };

@@ -17,8 +17,8 @@ class DragonTile extends StatelessWidget {
     return Card(
       margin: const EdgeInsets.only(bottom: 10.0),
       child: ListTile(
-        title: Text(dragon.name),
-        subtitle: Text(dragon.description),
+        title: Text(dragon.name ),
+        subtitle: Text(dragon.description ),
         trailing: Icon(
           dragon.active ? Icons.check : Icons.close,
           color: dragon.active ? Colors.green : Colors.red,

@@ -6,7 +6,7 @@ part 'cargo_model.g.dart';
 @JsonSerializable()
 class CargoModel implements Cargo {
   ///
-  CargoModel({required this.solarArray, required this.unpressurizedCargo});
+  CargoModel({  this.solarArray=0,   this.unpressurizedCargo = false});
 
   ///
   factory CargoModel.fromJson(Map<String, dynamic> json) =>
@@ -19,14 +19,14 @@ class CargoModel implements Cargo {
 
 
   @override
-  final int solarArray;
+  final int? solarArray;
 
   @override
-  final bool unpressurizedCargo;
+  final bool? unpressurizedCargo;
 
   @override
   bool? get stringify => true;
 
   @override
-  List<Object> get props => [solarArray, unpressurizedCargo ];
+  List<Object> get props => [solarArray?? 0, unpressurizedCargo?? false ];
 }

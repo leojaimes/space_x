@@ -6,16 +6,16 @@ import 'package:equatable/equatable.dart';
 class Thrust extends Equatable {
 
   const Thrust({
-    required this.kN,
-   required this.lbf,
+      this.kN=0.0,
+     this.lbf=0 ,
   });
 
-  final double kN;
-  final int lbf;
+  final double? kN;
+  final int? lbf;
 
   @override
   List<Object> get props => [
-        kN,
-        lbf,
+        kN??0.0 ,
+        lbf??0,
       ];
 }

@@ -11,7 +11,7 @@ class LaunchPayloadVolModel implements LaunchPayloadVol {
 
 
   ///
-  LaunchPayloadVolModel({required this.cubicFeet, required this.cubicMeters});
+  LaunchPayloadVolModel({  this.cubicFeet =0,   this.cubicMeters=0});
 
  ///
   factory LaunchPayloadVolModel.fromJson(Map<String, dynamic> json) =>
@@ -23,15 +23,15 @@ class LaunchPayloadVolModel implements LaunchPayloadVol {
  
 
   @override
-  final int cubicFeet;
+  final int?  cubicFeet;
 
   @override
-  final int cubicMeters;
+  final int? cubicMeters;
 
 
 
   @override
-  List<Object> get props => [cubicFeet, cubicMeters ];
+  List<Object> get props => [cubicFeet ?? 0, cubicMeters ?? 0 ];
 
   @override
   bool? get stringify => true;

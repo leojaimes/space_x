@@ -7,7 +7,7 @@ part 'payload_mass_model.g.dart';
 @JsonSerializable()
 class PayloadMassModel implements PayloadMass {
   ///
-  PayloadMassModel({required this.kg, required this.lb});
+  PayloadMassModel({  this.kg,   this.lb});
 
   ///
   factory PayloadMassModel.fromJson(Map<String, dynamic> json) =>
@@ -20,13 +20,13 @@ class PayloadMassModel implements PayloadMass {
 
 
   @override
-  final int kg;
+  final int? kg;
 
   @override
-  final int lb;
+  final int? lb;
 
   @override
-  List<Object> get props => [kg, lb ];
+  List<Object> get props => [kg??0, lb??0 ];
 
   @override
   bool? get stringify => true;

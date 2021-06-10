@@ -8,17 +8,17 @@ part of 'heat_shield_model.dart';
 
 HeatShieldModel _$HeatShieldModelFromJson(Map<String, dynamic> json) {
   return HeatShieldModel(
-    devPartner: json['devPartner'] as String,
-    material: json['material'] as String,
-    sizeMeters: (json['sizeMeters'] as num).toDouble(),
-    tempDegrees: json['tempDegrees'] as int,
+    material: json['material'] as String?,
+    sizeMeters: (json['size_meters'] as num?)?.toDouble(),
+    tempDegrees: json['temp_degrees'] as int?,
+    devPartner: json['dev_partner'] as String?,
   );
 }
 
 Map<String, dynamic> _$HeatShieldModelToJson(HeatShieldModel instance) =>
     <String, dynamic>{
-      'devPartner': instance.devPartner,
+      'dev_partner': instance.devPartner,
       'material': instance.material,
-      'sizeMeters': instance.sizeMeters,
-      'tempDegrees': instance.tempDegrees,
+      'size_meters': instance.sizeMeters,
+      'temp_degrees': instance.tempDegrees,
     };

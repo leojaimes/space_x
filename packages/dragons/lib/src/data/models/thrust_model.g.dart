@@ -8,8 +8,8 @@ part of 'thrust_model.dart';
 
 ThrustModel _$ThrustModelFromJson(Map<String, dynamic> json) {
   return ThrustModel(
-    (json['kN'] as num).toDouble(),
-    json['lbf'] as int,
+    kN: (json['kN'] as num?)?.toDouble(),
+    lbf: json['lbf'] as int?,
   );
 }
 

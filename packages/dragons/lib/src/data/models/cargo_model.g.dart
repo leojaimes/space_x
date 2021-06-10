@@ -8,13 +8,13 @@ part of 'cargo_model.dart';
 
 CargoModel _$CargoModelFromJson(Map<String, dynamic> json) {
   return CargoModel(
-    solarArray: json['solarArray'] as int,
-    unpressurizedCargo: json['unpressurizedCargo'] as bool,
+    solarArray: json['solar_array'] as int?,
+    unpressurizedCargo: json['unpressurized_cargo'] as bool?,
   );
 }
 
 Map<String, dynamic> _$CargoModelToJson(CargoModel instance) =>
     <String, dynamic>{
-      'solarArray': instance.solarArray,
-      'unpressurizedCargo': instance.unpressurizedCargo,
+      'solar_array': instance.solarArray,
+      'unpressurized_cargo': instance.unpressurizedCargo,
     };

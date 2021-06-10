@@ -9,14 +9,14 @@ part of 'launch_payload_vol_model.dart';
 LaunchPayloadVolModel _$LaunchPayloadVolModelFromJson(
     Map<String, dynamic> json) {
   return LaunchPayloadVolModel(
-    cubicFeet: json['cubicFeet'] as int,
-    cubicMeters: json['cubicMeters'] as int,
+    cubicFeet: json['cubic_feet'] as int?,
+    cubicMeters: json['cubic_meters'] as int?,
   );
 }
 
 Map<String, dynamic> _$LaunchPayloadVolModelToJson(
         LaunchPayloadVolModel instance) =>
     <String, dynamic>{
-      'cubicFeet': instance.cubicFeet,
-      'cubicMeters': instance.cubicMeters,
+      'cubic_feet': instance.cubicFeet,
+      'cubic_meters': instance.cubicMeters,
     };

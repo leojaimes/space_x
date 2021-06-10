@@ -8,13 +8,13 @@ part of 'thruster_model.dart';
 
 ThrusterModel _$ThrusterModelFromJson(Map<String, dynamic> json) {
   return ThrusterModel(
-    amount: json['amount'] as int,
-    fuel1: json['fuel1'] as String,
-    fuel2: json['fuel2'] as String,
-    isp: json['isp'] as int,
-    pods: json['pods'] as int,
+    amount: json['amount'] as int?,
+    fuel1: json['fuel1'] as String?,
+    fuel2: json['fuel2'] as String?,
+    isp: json['isp'] as int?,
+    pods: json['pods'] as int?,
     thrust: ThrustModel.fromJson(json['thrust'] as Map<String, dynamic>),
-    type: json['type'] as String,
+    type: json['type'] as String?,
   );
 }
 

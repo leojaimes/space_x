@@ -8,7 +8,7 @@ part 'diameter_model.g.dart';
 ///
 class DiameterModel implements Diameter {
   ///
-  DiameterModel({required this.feet, required this.meters});
+  DiameterModel({  this.feet = 0.0,   this.meters = 0.0 });
   ///
   factory DiameterModel.fromJson(Map<String, dynamic> json) =>
       _$DiameterModelFromJson(json);
@@ -17,13 +17,13 @@ class DiameterModel implements Diameter {
   Map<String, dynamic> toJson() => _$DiameterModelToJson(this);
 
   @override
-  final double feet;
+  final double? feet;
 
   @override
-  final double meters;
+  final double? meters;
 
   @override
-  List<Object> get props => [feet,   meters];
+  List<Object> get props => [feet ?? 0.0 ,   meters ?? 0.0];
 
   @override
   bool? get stringify => true;

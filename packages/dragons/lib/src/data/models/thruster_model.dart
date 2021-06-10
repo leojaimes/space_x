@@ -9,13 +9,13 @@ part 'thruster_model.g.dart';
 @JsonSerializable()
 class ThrusterModel implements Thruster {
   const ThrusterModel(
-      {required this.amount,
-      required this.fuel1,
-      required this.fuel2,
-      required this.isp,
-      required this.pods,
+      {  this.amount=0,
+        this.fuel1='',
+        this.fuel2='',
+        this.isp=0,
+        this.pods=0,
       required this.thrust,
-      required this.type});
+        this.type});
 
   factory ThrusterModel.fromJson(Map<String, dynamic> json) =>
       _$ThrusterModelFromJson(json);
@@ -23,35 +23,35 @@ class ThrusterModel implements Thruster {
   Map<String, dynamic> toJson() => _$ThrusterModelToJson(this);
 
   @override
-  final int amount;
+  final int? amount;
 
   @override
-  final String fuel1;
+  final String? fuel1;
 
   @override
-  final String fuel2;
+  final String?  fuel2;
 
   @override
-  final int isp;
+  final int? isp;
 
   @override
-  final int pods;
+  final int?  pods;
 
   /// //aqui el código generado se trae al Trusth se debe sobrescribr con el model
   @override
   final ThrustModel thrust; 
 
   @override
-  final String type;
+  final String? type;
 
   @override
   List<Object> get props => [
-        type,
-        amount,
-        pods,
-        fuel1,
-        fuel2,
-        isp,
+        type ?? '',
+        amount ?? 0,
+        pods ?? 0,
+        fuel1 ?? '',
+        fuel2 ?? '',
+        isp ?? 0,
         thrust,
       ];
 

@@ -1,22 +1,22 @@
 import 'package:equatable/equatable.dart';
+
 ///
 class LaunchPayloadVol extends Equatable {
-
   ///
   const LaunchPayloadVol({
-    required this.cubicMeters,
-    required this.cubicFeet,
+    this.cubicMeters = 0,
+    this.cubicFeet = 0,
   });
 
   ///
-  final int cubicMeters;
+  final int? cubicMeters;
 
   ///
-  final int cubicFeet;
+  final int? cubicFeet;
 
   @override
   List<Object> get props => [
-        cubicMeters,
-        cubicFeet,
+        cubicMeters ?? 0,
+        cubicFeet ?? 0,
       ];
 }

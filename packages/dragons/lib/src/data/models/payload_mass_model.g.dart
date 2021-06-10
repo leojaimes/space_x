@@ -8,8 +8,8 @@ part of 'payload_mass_model.dart';
 
 PayloadMassModel _$PayloadMassModelFromJson(Map<String, dynamic> json) {
   return PayloadMassModel(
-    kg: json['kg'] as int,
-    lb: json['lb'] as int,
+    kg: json['kg'] as int?,
+    lb: json['lb'] as int?,
   );
 }
 

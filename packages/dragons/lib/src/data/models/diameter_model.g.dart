@@ -8,8 +8,8 @@ part of 'diameter_model.dart';
 
 DiameterModel _$DiameterModelFromJson(Map<String, dynamic> json) {
   return DiameterModel(
-    feet: (json['feet'] as num).toDouble(),
-    meters: (json['meters'] as num).toDouble(),
+    feet: (json['feet'] as num?)?.toDouble(),
+    meters: (json['meters'] as num?)?.toDouble(),
   );
 }
 

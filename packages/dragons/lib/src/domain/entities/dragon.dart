@@ -5,45 +5,45 @@ import 'package:equatable/equatable.dart';
 import 'entities.dart';
 
 class Dragon extends Equatable {
-  Dragon({
-     required this.id,
-     required this.name,
-     required this.type,
-     required this.active,
-     required this.crewCapacity,
-     required this.sidewallAngleDeg,
-     required this.orbitDurationYr,
-     required this.dryMassKg,
-     required this.dryMassLb,
-     required this.firstFlight,
-     required this.heatShield,
-     required this.thrusters,
-     required this.launchPayloadMass,
-     required this.launchPayloadVol,
-     required this.returnPayloadMass,
-     required this.returnPayloadVol,
-     required this.pressurizedCapsule,
-     required this.trunk,
-     required this.heightWTrunk,
-     required this.diameter,
-     required this.flickrImages,
-     required this.wikipedia,
-     required this.description,
+  const Dragon({
+      required this.id,
+      required this.name,
+      required this.type,
+      required this.active,
+      this.crewCapacity,
+      this.sidewallAngleDeg,
+      this.orbitDurationYr,
+      this.dryMassKg,
+      this.dryMassLb,
+      this.firstFlight,
+      required this.heatShield,
+        this.thrusters,
+        this.launchPayloadMass,
+      required this.launchPayloadVol,
+      required this.returnPayloadMass,
+      required this.returnPayloadVol,
+      required this.pressurizedCapsule,
+      required this.trunk,
+      required this.heightWTrunk,
+      required this.diameter,
+      this.flickrImages,
+      this.wikipedia,
+      required this.description,
   });
 
-  final String id;
-  final String name;
-  final String type;
-  final bool active;
-  final int crewCapacity;
-  final int sidewallAngleDeg;
-  final int orbitDurationYr;
-  final int dryMassKg;
-  final int dryMassLb;
-  final DateTime firstFlight;
+  final String  id;
+  final String  name;
+  final String  type;
+  final bool  active;
+  final int? crewCapacity;
+  final int? sidewallAngleDeg;
+  final int? orbitDurationYr;
+  final int? dryMassKg;
+  final int? dryMassLb;
+  final DateTime?  firstFlight;
   final HeatShield heatShield;
-  final List<Thruster> thrusters;
-  final PayloadMass launchPayloadMass;
+  final List<Thruster>? thrusters;
+  final PayloadMass? launchPayloadMass;
   final LaunchPayloadVol launchPayloadVol;
   final PayloadMass returnPayloadMass;
   final LaunchPayloadVol returnPayloadVol;
@@ -51,26 +51,25 @@ class Dragon extends Equatable {
   final Trunk trunk;
   final Diameter heightWTrunk;
   final Diameter diameter;
-  final List<String> flickrImages;
-  final String wikipedia;
-  final String description;
+  final List<String>? flickrImages;
+  final String? wikipedia;
+  final String   description;
 
   @override
-  // TODO: implement props
   List<Object> get props => [
      id,
-     name,
-     type,
-     active,
-     crewCapacity,
-     sidewallAngleDeg,
-     orbitDurationYr,
-     dryMassKg,
-     dryMassLb,
-     firstFlight,
+     name ,
+     type ,
+     active ,
+     crewCapacity ?? 0  ,
+     sidewallAngleDeg ?? 0 ,
+     orbitDurationYr ?? 0,
+     dryMassKg ?? 0,
+     dryMassLb?? 0,
+     firstFlight ?? DateTime.now(),
      heatShield,
-     thrusters,
-     launchPayloadMass,
+     thrusters?? [],
+     launchPayloadMass ?? const PayloadMass(),
      launchPayloadVol,
      returnPayloadMass,
      returnPayloadVol,
@@ -78,8 +77,8 @@ class Dragon extends Equatable {
      trunk,
      heightWTrunk,
      diameter,
-     flickrImages,
-     wikipedia,
-     description,
+     flickrImages ?? [],
+     wikipedia ??'',
+     description  ,
   ];
 }

@@ -12,31 +12,32 @@ import 'trunk_model.dart';
 part 'dragon_model.g.dart';
 
 @JsonSerializable()
+ 
 class DragonModel implements Dragon {
-  DragonModel({
-    required this.id,
-    required this.name,
-    required this.type,
-    required this.active,
-    required this.crewCapacity,
-    required this.sidewallAngleDeg,
-    required this.orbitDurationYr,
-    required this.dryMassKg,
-    required this.dryMassLb,
-    required this.firstFlight,
-    required this.heatShield,
-    required this.thrusters,
-    required this.launchPayloadMass,
-    required this.launchPayloadVol,
-    required this.returnPayloadMass,
-    required this.returnPayloadVol,
-    required this.pressurizedCapsule,
-    required this.trunk,
-    required this.heightWTrunk,
-    required this.diameter,
-    required this.flickrImages,
-    required this.wikipedia,
-    required this.description,
+  const DragonModel({
+      required this.id,
+      required this.name,
+      required this.type,
+      required this.active,
+      this.crewCapacity,
+      this.sidewallAngleDeg,
+      this.orbitDurationYr,
+      this.dryMassKg,
+      this.dryMassLb,
+      this.firstFlight,
+      required this.heatShield,
+        this.thrusters= const [],
+        this.launchPayloadMass,
+      required this.launchPayloadVol,
+      required this.returnPayloadMass,
+      required this.returnPayloadVol,
+      required this.pressurizedCapsule,
+      required this.trunk,
+      required this.heightWTrunk,
+      required this.diameter,
+      this.flickrImages,
+      this.wikipedia,
+      required this.description,
   });
 
 
@@ -53,29 +54,29 @@ Map<String, dynamic> toJson() => _$DragonModelToJson(this);
   @override
   final String name;
   @override
-  final String type;
+  final String  type;
   @override
-  final bool active;
+  final bool  active;
   @override
-  final int crewCapacity;
+  final int? crewCapacity;
   @override
-  final int sidewallAngleDeg;
+  final int? sidewallAngleDeg;
   @override
-  final int orbitDurationYr;
+  final int? orbitDurationYr;
   @override
-  final int dryMassKg;
+  final int? dryMassKg;
   @override
-  final int dryMassLb;
+  final int? dryMassLb;
   @override
-  final DateTime firstFlight;
+  final DateTime? firstFlight;
 
   @override
   final HeatShieldModel heatShield;
 
   @override
-  final List<ThrusterModel> thrusters;
+  final List<ThrusterModel>? thrusters;
   @override
-  final PayloadMassModel launchPayloadMass;
+  final PayloadMassModel? launchPayloadMass;
   @override
   final LaunchPayloadVolModel launchPayloadVol;
   @override
@@ -91,9 +92,9 @@ Map<String, dynamic> toJson() => _$DragonModelToJson(this);
   @override
   final DiameterModel diameter;
   @override
-  final List<String> flickrImages;
+  final List<String>? flickrImages;
   @override
-  final String wikipedia;
+  final String? wikipedia;
   @override
   final String description;
 
@@ -102,28 +103,28 @@ Map<String, dynamic> toJson() => _$DragonModelToJson(this);
 
   @override
   List<Object> get props => [
-        id,
-        name,
-        type,
-        active,
-        crewCapacity,
-        sidewallAngleDeg,
-        orbitDurationYr,
-        dryMassKg,
-        dryMassLb,
-        firstFlight,
-        heatShield,
-        thrusters,
-        launchPayloadMass,
-        launchPayloadVol,
-        returnPayloadMass,
-        returnPayloadVol,
-        pressurizedCapsule,
-        trunk,
-        heightWTrunk,
-        diameter,
-        flickrImages,
-        wikipedia,
-        description,
-      ];
+     id,
+     name ,
+     type ,
+     active ,
+     crewCapacity ?? 0  ,
+     sidewallAngleDeg ?? 0 ,
+     orbitDurationYr ?? 0,
+     dryMassKg ?? 0,
+     dryMassLb?? 0,
+     firstFlight ?? DateTime.now(),
+     heatShield,
+     thrusters??[],
+     launchPayloadMass?? PayloadMassModel(),
+     launchPayloadVol,
+     returnPayloadMass,
+     returnPayloadVol,
+     pressurizedCapsule,
+     trunk,
+     heightWTrunk,
+     diameter,
+     flickrImages ?? [],
+     wikipedia ??'',
+     description  ,
+  ];
 }
