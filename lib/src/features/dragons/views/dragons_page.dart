@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:space_x/src/features/dragons/logic/dragons_provider.dart';
+import 'package:space_x/src/features/dragons/logic/dragons_state.dart';
 import 'package:space_x/src/features/dragons/views/wdigets/dragon_list.dart';
 
 class DragonsPage extends StatelessWidget {
@@ -29,8 +30,8 @@ class DragonsPage extends StatelessWidget {
 class _DragonsConsumer extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ScopedReader watch) {
-    final state = watch(dragonsNotifierProvider );
-
+    final state = watch(dragonsNotifierProvider.notifier ).state;
+    
     return state.when(
       initial: () => const Center(child: _Initial()),
       loading: () => const Center(child: CircularProgressIndicator()),

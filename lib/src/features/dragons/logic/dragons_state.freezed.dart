@@ -16,22 +16,22 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$DragonsStateTearOff {
   const _$DragonsStateTearOff();
 
-  DataDragons dataDragons({required List<Dragon> dragons}) {
-    return DataDragons(
+  _DataDragons dataDragons({required List<Dragon> dragons}) {
+    return _DataDragons(
       dragons: dragons,
     );
   }
 
-  Initial initial() {
-    return const Initial();
+  _Initial initial() {
+    return const _Initial();
   }
 
-  Loading loading() {
-    return const Loading();
+  _Loading loading() {
+    return const _Loading();
   }
 
-  Error error([String? message]) {
-    return Error(
+  _Error error([String? message]) {
+    return _Error(
       message,
     );
   }
@@ -61,18 +61,18 @@ mixin _$DragonsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(DataDragons value) dataDragons,
-    required TResult Function(Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Error value) error,
+    required TResult Function(_DataDragons value) dataDragons,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(DataDragons value)? dataDragons,
-    TResult Function(Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Error value)? error,
+    TResult Function(_DataDragons value)? dataDragons,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -95,28 +95,28 @@ class _$DragonsStateCopyWithImpl<$Res> implements $DragonsStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $DataDragonsCopyWith<$Res> {
-  factory $DataDragonsCopyWith(
-          DataDragons value, $Res Function(DataDragons) then) =
-      _$DataDragonsCopyWithImpl<$Res>;
+abstract class _$DataDragonsCopyWith<$Res> {
+  factory _$DataDragonsCopyWith(
+          _DataDragons value, $Res Function(_DataDragons) then) =
+      __$DataDragonsCopyWithImpl<$Res>;
   $Res call({List<Dragon> dragons});
 }
 
 /// @nodoc
-class _$DataDragonsCopyWithImpl<$Res> extends _$DragonsStateCopyWithImpl<$Res>
-    implements $DataDragonsCopyWith<$Res> {
-  _$DataDragonsCopyWithImpl(
-      DataDragons _value, $Res Function(DataDragons) _then)
-      : super(_value, (v) => _then(v as DataDragons));
+class __$DataDragonsCopyWithImpl<$Res> extends _$DragonsStateCopyWithImpl<$Res>
+    implements _$DataDragonsCopyWith<$Res> {
+  __$DataDragonsCopyWithImpl(
+      _DataDragons _value, $Res Function(_DataDragons) _then)
+      : super(_value, (v) => _then(v as _DataDragons));
 
   @override
-  DataDragons get _value => super._value as DataDragons;
+  _DataDragons get _value => super._value as _DataDragons;
 
   @override
   $Res call({
     Object? dragons = freezed,
   }) {
-    return _then(DataDragons(
+    return _then(_DataDragons(
       dragons: dragons == freezed
           ? _value.dragons
           : dragons // ignore: cast_nullable_to_non_nullable
@@ -127,8 +127,8 @@ class _$DataDragonsCopyWithImpl<$Res> extends _$DragonsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DataDragons implements DataDragons {
-  const _$DataDragons({required this.dragons});
+class _$_DataDragons implements _DataDragons {
+  const _$_DataDragons({required this.dragons});
 
   @override
   final List<Dragon> dragons;
@@ -141,7 +141,7 @@ class _$DataDragons implements DataDragons {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DataDragons &&
+        (other is _DataDragons &&
             (identical(other.dragons, dragons) ||
                 const DeepCollectionEquality().equals(other.dragons, dragons)));
   }
@@ -152,8 +152,8 @@ class _$DataDragons implements DataDragons {
 
   @JsonKey(ignore: true)
   @override
-  $DataDragonsCopyWith<DataDragons> get copyWith =>
-      _$DataDragonsCopyWithImpl<DataDragons>(this, _$identity);
+  _$DataDragonsCopyWith<_DataDragons> get copyWith =>
+      __$DataDragonsCopyWithImpl<_DataDragons>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -184,10 +184,10 @@ class _$DataDragons implements DataDragons {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(DataDragons value) dataDragons,
-    required TResult Function(Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Error value) error,
+    required TResult Function(_DataDragons value) dataDragons,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
   }) {
     return dataDragons(this);
   }
@@ -195,10 +195,10 @@ class _$DataDragons implements DataDragons {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(DataDragons value)? dataDragons,
-    TResult Function(Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Error value)? error,
+    TResult Function(_DataDragons value)? dataDragons,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (dataDragons != null) {
@@ -208,35 +208,35 @@ class _$DataDragons implements DataDragons {
   }
 }
 
-abstract class DataDragons implements DragonsState {
-  const factory DataDragons({required List<Dragon> dragons}) = _$DataDragons;
+abstract class _DataDragons implements DragonsState {
+  const factory _DataDragons({required List<Dragon> dragons}) = _$_DataDragons;
 
   List<Dragon> get dragons => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DataDragonsCopyWith<DataDragons> get copyWith =>
+  _$DataDragonsCopyWith<_DataDragons> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $InitialCopyWith<$Res> {
-  factory $InitialCopyWith(Initial value, $Res Function(Initial) then) =
-      _$InitialCopyWithImpl<$Res>;
+abstract class _$InitialCopyWith<$Res> {
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$InitialCopyWithImpl<$Res> extends _$DragonsStateCopyWithImpl<$Res>
-    implements $InitialCopyWith<$Res> {
-  _$InitialCopyWithImpl(Initial _value, $Res Function(Initial) _then)
-      : super(_value, (v) => _then(v as Initial));
+class __$InitialCopyWithImpl<$Res> extends _$DragonsStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
-  Initial get _value => super._value as Initial;
+  _Initial get _value => super._value as _Initial;
 }
 
 /// @nodoc
 
-class _$Initial implements Initial {
-  const _$Initial();
+class _$_Initial implements _Initial {
+  const _$_Initial();
 
   @override
   String toString() {
@@ -245,7 +245,7 @@ class _$Initial implements Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Initial);
+    return identical(this, other) || (other is _Initial);
   }
 
   @override
@@ -280,10 +280,10 @@ class _$Initial implements Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(DataDragons value) dataDragons,
-    required TResult Function(Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Error value) error,
+    required TResult Function(_DataDragons value) dataDragons,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
   }) {
     return initial(this);
   }
@@ -291,10 +291,10 @@ class _$Initial implements Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(DataDragons value)? dataDragons,
-    TResult Function(Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Error value)? error,
+    TResult Function(_DataDragons value)? dataDragons,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -304,30 +304,30 @@ class _$Initial implements Initial {
   }
 }
 
-abstract class Initial implements DragonsState {
-  const factory Initial() = _$Initial;
+abstract class _Initial implements DragonsState {
+  const factory _Initial() = _$_Initial;
 }
 
 /// @nodoc
-abstract class $LoadingCopyWith<$Res> {
-  factory $LoadingCopyWith(Loading value, $Res Function(Loading) then) =
-      _$LoadingCopyWithImpl<$Res>;
+abstract class _$LoadingCopyWith<$Res> {
+  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
+      __$LoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoadingCopyWithImpl<$Res> extends _$DragonsStateCopyWithImpl<$Res>
-    implements $LoadingCopyWith<$Res> {
-  _$LoadingCopyWithImpl(Loading _value, $Res Function(Loading) _then)
-      : super(_value, (v) => _then(v as Loading));
+class __$LoadingCopyWithImpl<$Res> extends _$DragonsStateCopyWithImpl<$Res>
+    implements _$LoadingCopyWith<$Res> {
+  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
+      : super(_value, (v) => _then(v as _Loading));
 
   @override
-  Loading get _value => super._value as Loading;
+  _Loading get _value => super._value as _Loading;
 }
 
 /// @nodoc
 
-class _$Loading implements Loading {
-  const _$Loading();
+class _$_Loading implements _Loading {
+  const _$_Loading();
 
   @override
   String toString() {
@@ -336,7 +336,7 @@ class _$Loading implements Loading {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Loading);
+    return identical(this, other) || (other is _Loading);
   }
 
   @override
@@ -371,10 +371,10 @@ class _$Loading implements Loading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(DataDragons value) dataDragons,
-    required TResult Function(Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Error value) error,
+    required TResult Function(_DataDragons value) dataDragons,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
   }) {
     return loading(this);
   }
@@ -382,10 +382,10 @@ class _$Loading implements Loading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(DataDragons value)? dataDragons,
-    TResult Function(Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Error value)? error,
+    TResult Function(_DataDragons value)? dataDragons,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -395,31 +395,31 @@ class _$Loading implements Loading {
   }
 }
 
-abstract class Loading implements DragonsState {
-  const factory Loading() = _$Loading;
+abstract class _Loading implements DragonsState {
+  const factory _Loading() = _$_Loading;
 }
 
 /// @nodoc
-abstract class $ErrorCopyWith<$Res> {
-  factory $ErrorCopyWith(Error value, $Res Function(Error) then) =
-      _$ErrorCopyWithImpl<$Res>;
+abstract class _$ErrorCopyWith<$Res> {
+  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
+      __$ErrorCopyWithImpl<$Res>;
   $Res call({String? message});
 }
 
 /// @nodoc
-class _$ErrorCopyWithImpl<$Res> extends _$DragonsStateCopyWithImpl<$Res>
-    implements $ErrorCopyWith<$Res> {
-  _$ErrorCopyWithImpl(Error _value, $Res Function(Error) _then)
-      : super(_value, (v) => _then(v as Error));
+class __$ErrorCopyWithImpl<$Res> extends _$DragonsStateCopyWithImpl<$Res>
+    implements _$ErrorCopyWith<$Res> {
+  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
+      : super(_value, (v) => _then(v as _Error));
 
   @override
-  Error get _value => super._value as Error;
+  _Error get _value => super._value as _Error;
 
   @override
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(Error(
+    return _then(_Error(
       message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -430,8 +430,8 @@ class _$ErrorCopyWithImpl<$Res> extends _$DragonsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$Error implements Error {
-  const _$Error([this.message]);
+class _$_Error implements _Error {
+  const _$_Error([this.message]);
 
   @override
   final String? message;
@@ -444,7 +444,7 @@ class _$Error implements Error {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is Error &&
+        (other is _Error &&
             (identical(other.message, message) ||
                 const DeepCollectionEquality().equals(other.message, message)));
   }
@@ -455,8 +455,8 @@ class _$Error implements Error {
 
   @JsonKey(ignore: true)
   @override
-  $ErrorCopyWith<Error> get copyWith =>
-      _$ErrorCopyWithImpl<Error>(this, _$identity);
+  _$ErrorCopyWith<_Error> get copyWith =>
+      __$ErrorCopyWithImpl<_Error>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -487,10 +487,10 @@ class _$Error implements Error {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(DataDragons value) dataDragons,
-    required TResult Function(Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Error value) error,
+    required TResult Function(_DataDragons value) dataDragons,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
   }) {
     return error(this);
   }
@@ -498,10 +498,10 @@ class _$Error implements Error {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(DataDragons value)? dataDragons,
-    TResult Function(Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Error value)? error,
+    TResult Function(_DataDragons value)? dataDragons,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -511,10 +511,10 @@ class _$Error implements Error {
   }
 }
 
-abstract class Error implements DragonsState {
-  const factory Error([String? message]) = _$Error;
+abstract class _Error implements DragonsState {
+  const factory _Error([String? message]) = _$_Error;
 
   String? get message => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ErrorCopyWith<Error> get copyWith => throw _privateConstructorUsedError;
+  _$ErrorCopyWith<_Error> get copyWith => throw _privateConstructorUsedError;
 }
