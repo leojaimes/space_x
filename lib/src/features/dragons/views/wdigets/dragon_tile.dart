@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:dragons/dragons.dart' show Dragon;
+import 'package:space_x/src/features/dragons/views/dragon_detail_page.dart';
 
  
 
@@ -24,7 +25,7 @@ class DragonTile extends StatelessWidget {
           color: dragon.active ? Colors.green : Colors.red,
         ),
         onTap: () async {
-          //await Navigator.of(context).push(DragonDetailPage.go(dragon));
+         await Navigator.of(context).push(DragonDetailPage.go(dragon));
         },
       ),
     );

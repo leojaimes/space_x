@@ -22,7 +22,7 @@ class DragonsPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Dragons'),
       ),
-      body:   _DragonsConsumer(),
+      body: _DragonsConsumer(),
     );
   }
 }
@@ -30,8 +30,8 @@ class DragonsPage extends StatelessWidget {
 class _DragonsConsumer extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ScopedReader watch) {
-    final state = watch(dragonsNotifierProvider.notifier ).state;
-    
+    final state = watch(dragonsNotifierProvider);
+     
     return state.when(
       initial: () => const Center(child: _Initial()),
       loading: () => const Center(child: CircularProgressIndicator()),
@@ -51,9 +51,10 @@ class _Initial extends StatelessWidget {
       children: [
         const Text('Initial'),
         const SizedBox(height: 20),
-        ElevatedButton (
-        
-          child: Text('fdfs'),
+        ElevatedButton(
+          child: Text('GET DRAGONS'),
+          autofocus: false,
+          clipBehavior: Clip.none,
           onPressed: () {
             context.read(dragonsNotifierProvider.notifier).getDragons();
           },

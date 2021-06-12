@@ -4,6 +4,6 @@ import 'package:space_x/src/app.dart';
  
 
 void main() {
- runApp(ProviderScope(child: SpaceXApp()));
+ runApp(const ProviderScope(child: SpaceXApp()));
 }
 

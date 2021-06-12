@@ -9,7 +9,8 @@ import 'dragons_state.dart';
 part 'dragons_state_notifier.dart';
 
 /// Provider to use the DragonsStateNotifier
-final dragonsNotifierProvider = StateNotifierProvider(
+final dragonsNotifierProvider =
+    StateNotifierProvider<DragonsNotifier, DragonsState>(
   (ref) => DragonsNotifier(
       getDragon: ref.watch(getDragonProvider),
       getDragons: ref.watch(getDragonsProvider)),
